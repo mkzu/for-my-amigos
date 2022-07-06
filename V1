@@ -1,0 +1,123 @@
+  game.StarterGui:SetCore("SendNotification", {
+    Title = 'Loading...';
+    Text = '- Please give the script a few seconds to load!';
+    Duration = 3;
+  })
+ 
+wait(3) 
+
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Basketball Simulator Script", "DarkTheme")
+
+
+
+local Tab = Window:NewTab("Main")--Main Section
+local Section = Tab:NewSection("Main")
+Section:NewButton("Inf Money, Click This", "ButtonInfo", function()
+local args = {
+   [1] = "range",
+   [2] = -501
+}
+
+game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.2").knit.Services.LevelService.RF.LevelAbility:InvokeServer(unpack(args))
+wait(0.2)
+local args = {
+   [1] = "range",
+   [2] = "1"
+}
+
+game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.2").knit.Services.LevelService.RF.LevelAbility:InvokeServer(unpack(args))
+wait(0.3)
+local args = {
+   [1] = "range",
+   [2] = 501
+}
+
+game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.2").knit.Services.LevelService.RF.LevelAbility:InvokeServer(unpack(args))
+end)
+
+Section:NewButton("Rebirth", "ButtonInfo", function()
+
+game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.2").knit.Services.RebirthService.RF.Rebirth:InvokeServer()
+
+end)
+
+
+
+
+
+
+local Tab = Window:NewTab("Duffels")--Duffels Section
+local Section = Tab:NewSection("Click which world duffel you want to open")
+Section:NewButton("World 1", "ButtonInfo", function()
+
+local args = {
+    [1] = "streets"
+}
+
+game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.2").knit.Services.DuffelService.RF.OpenDuffel:InvokeServer(unpack(args))
+end)
+
+Section:NewButton("World 2", "ButtonInfo", function()
+
+local args = {
+    [1] = "railyard"
+}
+
+game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.2").knit.Services.DuffelService.RF.OpenDuffel:InvokeServer(unpack(args))
+
+
+end)
+
+Section:NewButton("World 3", "ButtonInfo", function()
+
+local args = {
+    [1] = "centralPark"
+}
+
+game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.2").knit.Services.DuffelService.RF.OpenDuffel:InvokeServer(unpack(args))
+
+end)
+
+Section:NewButton("World 4", "ButtonInfo", function()
+
+local args = {
+    [1] = "timesSquare"
+}
+
+game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.2").knit.Services.DuffelService.RF.OpenDuffel:InvokeServer(unpack(args))
+end)
+
+Section:NewButton("World 5", "ButtonInfo", function()
+
+local args = {
+    [1] = "paris"
+}
+
+game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.2").knit.Services.DuffelService.RF.OpenDuffel:InvokeServer(unpack(args))
+
+end)
+
+Section:NewButton("World 6", "ButtonInfo", function()
+
+local args = {
+    [1] = "rome"
+}
+
+game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.2").knit.Services.DuffelService.RF.OpenDuffel:InvokeServer(unpack(args))
+
+end)
+
+
+
+
+
+
+
+local Tab = Window:NewTab("Player")--Player Section
+local Section = Tab:NewSection("Player Section")
+Section:NewSlider("Walking Speed", "how fast u walk", 500, 16, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
